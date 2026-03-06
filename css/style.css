@@ -1,0 +1,866 @@
+:root {
+  /* Culori */
+  --bg-dark: hsl(0, 0%, 13%);
+  --bg-light: hsl(0, 0%, 95%);     
+  --text-light: hsl(0, 0%, 95%);
+  --text-dark: hsl(0, 0%, 13%);
+  --accent: hsl(182, 91%, 35%);
+  --gray: hsl(0, 0%, 60%);
+
+  /* Fonturi */
+  --merri-sans: "Merriweather Sans", sans-serif;
+  --merri: "Merriweather", sans-serif;
+}
+  
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* PRELOADER (Ecran de încărcare) */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-dark); 
+  z-index: 9999; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  transition: opacity 0.5s ease-in-out; 
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #FFF; 
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: var(--accent); 
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+  
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+  
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: var(--merri);
+  overflow-x: hidden;
+}
+  
+/* NAVBAR*/
+header {
+  width: 100%;
+  background-color: var(--bg-dark);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  top: 0;
+  z-index: 1000;
+}
+  
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1000;
+  background-color: var(--bg-dark);
+}
+  
+.navbar_left .logo img {
+  height: 70px;
+  width: auto;
+}
+  
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+  
+.menu a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-family: var(--merri-sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+  
+.menu a:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
+
+/* SISTEM LAYOUT (Secțiuni și Containere) */
+
+/* Stiluri pentru fundaluri */
+.bg-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* Container central */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+  width: 100%;
+}
+
+/* SPLIT LAYOUT (Stânga / Dreapta) */
+.split-layout {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.content-left, .content-right {
+  flex: 1; 
+}
+
+/* Imagini */
+.profile-photo {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 0px var(--accent); 
+  display: block;
+  margin-left: auto; 
+}
+
+.feature-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* TYPOGRAPHY & ELEMENTE */
+h1 {
+  font-family: var(--merri-sans);
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+h2 {
+  font-family: var(--merri-sans);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/*titlu pagina portofolio */
+.page-title {
+  color: var(--text-light);       
+  text-align: center;             
+  margin-bottom: 15px;            
+  font-family: var(--merri-sans); 
+  text-transform: uppercase;      
+  font-size: 2.5rem;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Culori specifice pentru titluri în funcție de fundal */
+.bg-dark h2 { 
+  color: var(--accent); 
+}
+.bg-light h2 { 
+  color: var(--accent);
+}
+
+p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.hobby-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.hobby-list li {
+  margin-bottom: 10px;
+  font-family: var(--merri-sans);
+}
+
+/* BUTOANE */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: var(--merri-sans);
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.btn-outline {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* COMPETENȚE */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.skill-box {
+  background-color: hsl(0, 0%, 18%); 
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.skill-box:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+}
+
+.skill-box h3 {
+  color: var(--bg-light);
+  margin: 10px 0 0 0;
+  font-family: var(--merri-sans);
+}
+
+.center-text { 
+  text-align: center; 
+}
+
+/*Slider Imagini hobbyuri*/
+
+.content-right .slider_container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden; 
+}
+
+.hidden {
+  display: none;
+}
+
+.box {
+  width: 40px;       
+  height: 300px;     
+  background-color: var(--accent);
+  margin: 5px;       
+  cursor: pointer;
+  transition: width 0.2s ease-out, height 0.2s ease-out; 
+  border-radius: 25px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hidden:checked + .box {
+  width: 400px;     
+}
+
+.b1 {
+  background-image: url("../images/hiking.jpg");
+}
+
+.b2 {
+  background-image: url("../images/camping.jpg"); 
+}
+
+.b3 {
+  background-image: url("../images/sky.jpg"); 
+}
+
+.b4 {
+  background-image: url("../images/guitar.jpg"); 
+}
+
+/* FOOTER */
+footer {
+  padding: 40px 0;
+  background-color: var(--bg-dark);
+  border-top: 4px solid var(--accent);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.social-icon {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 0; 
+}
+
+.social-icon img {
+  width: 24px;  
+  height: 24px;
+  transition: transform 0.3s ease, filter 0.1s ease;
+  filter: invert(1) brightness(2); 
+}
+
+
+.social-icon:hover img {
+  transform: scale(1.2); 
+  /*filtrul de mai jos coloreaza iconitele cu culoare --accent*/
+  filter: invert(31%) sepia(95%) saturate(1845%) hue-rotate(159deg) brightness(95%) contrast(101%); 
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end;  
+}
+
+.footer-logo {
+  height: 50px; 
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.footer-right p {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin: 0;
+  font-family: var(--merri-sans);
+}
+
+
+/* STILURI PENTRU MENIU HAMBURGER */
+/* https://www.sliderrevolution.com/resources/css-hamburger-menu/ */
+
+.visuallyHidden {
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+
+/* Containerul butonului */
+.nav-toggle-label {
+  display: none; /* Ascuns pe Desktop */
+  cursor: pointer;
+}
+
+/* Cutia care ține barele */
+.hamburger {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  
+}
+
+/* Stilul comun pentru cele 4 bare */
+.hamburger .bar {
+  padding: 0;
+  width: 30px;
+  height: 4px;
+  background-color: var(--text-light); 
+  display: block;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+  position: absolute; 
+}
+
+/* Poziționarea inițială a barelor */
+.bar1 { 
+  top: 0; 
+}
+.bar2, .bar3 { 
+  top: 13.5px; 
+}
+.bar3 { 
+  right: 0; 
+}
+.bar4 { 
+  bottom: 0; 
+}
+
+
+/* COLAJ ABOUT PAGE*/
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 15px; 
+  max-width: 450px; 
+  margin: 0 auto; 
+}
+
+.grid-img {
+  width: 100%;
+  height: 150px; 
+  object-fit: cover; 
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+
+.grid-img:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.hobby-list {
+  color: var(--text-dark);
+}
+
+/*  FORMULAR DE CONTACT */
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.05); 
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-family: var(--merri-sans);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+
+input[type="text"], input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #444; 
+  background-color: #222; 
+  color: var(--text-light); 
+  border-radius: 8px;
+  font-family: var(--merri-sans);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* click pe un input (focus) */
+input[type="text"]:focus, input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent); 
+  box-shadow: 0 0 8px rgba(0, 150, 136, 0.3); 
+}
+
+textarea {
+  resize: vertical; /* Permite redimensionarea doar pe verticală */
+}
+
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+
+input[type="submit"], 
+input[type="reset"] {
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+/* Info Box din stânga */
+.contact-info-box {
+  margin-top: 30px;
+  padding: 20px;
+  border-left: 4px solid var(--accent);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+.contact-info-box p {
+  margin-bottom: 10px;
+}
+
+/*Galerie foto din PORTOFOLIO*/
+
+/* Containerul Principal */
+.galery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px; 
+  gap: 15px; 
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-auto-flow: dense; 
+}
+
+/* Containerul individual al fiecărei poze */
+.galery-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.galery-container:hover {
+  transform: scale(1.02); 
+  z-index: 2;
+}
+
+.galery-item, .image, .image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.image img {
+  object-fit: cover; 
+}
+
+/* creare dinamica: imigine de diferite dimensiuni*/
+
+/* Imaginile LATE (Span 2 coloane) */
+.galery-container:nth-child(1),
+.galery-container:nth-child(7) {
+  grid-column: span 2;
+}
+
+/* Imaginile ÎNALTE (Span 2 rânduri) */
+.galery-container:nth-child(3),
+.galery-container:nth-child(5) {
+  grid-row: span 2;
+}
+
+/* Imaginile MARI (2x2) */
+.galery-container:nth-child(4) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+
+/* caption: peste imagine, in partea de jos, cu un gradient */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  font-family: var(--merri-sans);
+  font-size: 0.9rem;
+  opacity: 0; 
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.galery-container:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*Back to top icon*/
+
+.back-to-top {
+  position: fixed;
+  top: 1.5vh;
+  right: 3vw;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--accent);
+  text-decoration: none;  
+  z-index: 5;
+  animation: arrowjump 1.5s ease infinite;
+  transition: 0.2s ease-out;
+}
+
+.back-to-top span {
+  color: var(--bg-light);
+  font-size: 2rem;
+  transition: 0.2s ease-out;
+}
+
+.back-to-top:hover{
+  background-color: hsl(182, 81%, 35%);
+}
+
+.back-to-top:hover span{
+  transform: translateY(-3px);
+}
+
+@keyframes arrowjump {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(15%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* RESPONSIVE (TABLETĂ ȘI MOBIL) */
+@media screen and (max-width: 768px) {
+  
+  h1 { 
+    font-size: 2.2rem; 
+  }
+  
+  /* Afișăm butonul Hamburger */
+  .nav-toggle-label {
+    display: block; 
+  }
+
+  /* ANIMAȚIA HAMBURGERULUI (Când checkbox-ul e bifat) */
+  /* Rotire bara 1 */
+  #nav-toggle:checked + label .bar1 {
+    transform: rotate(45deg);
+    transform-origin: 5%;
+    width: 41px;
+  }
+
+  /* Bara 2 pleacă în stânga și dispare */
+  #nav-toggle:checked + label .bar2 {
+    transform: translateX(-40px);
+    background-color: transparent;
+  }
+
+  /* Bara 3 pleacă în dreapta și dispare */
+  #nav-toggle:checked + label .bar3 {
+    transform: translateX(40px);
+    background-color: transparent;
+  }
+
+  /* Rotire bara 4 */
+  #nav-toggle:checked + label .bar4 {
+    transform-origin: 5%;
+    transform: rotate(-45deg);
+    width: 41px;
+  }
+
+  /*  MENIU CU ANIMAȚIE */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark); 
+    padding: 20px 0;
+    border-bottom: 3px solid var(--accent); 
+    z-index: 2000;
+
+    /* Animatii de intrare */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+
+    /* STAREA INIȚIALĂ A LINKURILOR (Ascunse) */
+    opacity: 0;
+    transform: translateX(-20px); /* Vin din stânga */
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu a {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+  }
+
+  /* STAREA ACTIVĂ (Când Hamburgerul este apăsat) */
+  
+  /* Afișăm containerul meniului */
+  #nav-toggle:checked ~ .menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Revine la poziția normală */
+    box-shadow: 0 100vh 0 100vh rgba(0, 0, 0, 0.6);
+  }
+
+  /* Afișăm elementele listei */
+  #nav-toggle:checked ~ .menu li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* EFECTUL DE CASCADĂ (Delay pentru fiecare element) */
+  #nav-toggle:checked ~ .menu li:nth-child(1) { 
+    transition-delay: 0.1s; 
+  }
+  #nav-toggle:checked ~ .menu li:nth-child(2) { 
+    transition-delay: 0.2s; 
+  }
+  #nav-toggle:checked ~ .menu li:nth-child(3) { 
+    transition-delay: 0.3s; 
+  }
+  #nav-toggle:checked ~ .menu li:nth-child(4) { 
+    transition-delay: 0.4s; 
+  }
+
+  /* Layout-ul split (Stânga-Dreapta devine Sus-Jos) */
+  .split-layout {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .reverse-mobile {
+    flex-direction: column-reverse;
+  }
+
+  .profile-photo, .feature-img {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+
+  /*Slider Imagini Hobbiuri*/
+  .box {
+    height: 200px;
+    width: 20px;
+    margin: 3px;
+  }
+
+  .hidden:checked + .box {
+    width: 240px;      
+  }
+
+  .back-to-top {
+    display: none;
+  }
+
+  /*Ajustari formular de contact*/
+  .form-container {
+    padding: 15px;
+    width: 100%
+  }
+
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  /*Ajustari galerie foto - PORTOFOLIO*/
+  .galery {
+    grid-template-columns: 1fr; 
+    grid-auto-rows: auto; 
+  }
+
+  .galery-container:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .image img {
+    height: auto; 
+  }
+
+  /* Footer pe coloană */
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .footer-left {
+    justify-content: center; 
+  }
+
+  .footer-right {
+    align-items: center; 
+  }
+}
+

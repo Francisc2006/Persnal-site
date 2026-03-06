@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang = "ro">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FA | Acasă</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        <div id="preloader">
+            <span class="loader"></span>
+        </div>
+
+        <header>
+            <nav class="navbar">
+                <div class="navbar_left">
+                    <a href="home.html" class="logo">
+                        <img src="images/logo.png" alt="AF Logo">
+                    </a>
+                </div>
+
+                <input type="checkbox" id="nav-toggle" class="nav-toggle visuallyHidden">
+    
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <div class="hamburger">
+                        <span class="bar bar1"></span>
+                        <span class="bar bar2"></span>
+                        <span class="bar bar3"></span>
+                        <span class="bar bar4"></span>
+                    </div>
+                </label>
+
+                <ul class="menu">
+                    <li class="menuitem"><a href="home.html">Acasă</a></li>
+                    <li class="menuitem"><a href="contact.html">Contact</a></li>
+                    <li class="menuitem"><a href="about.html">Despre</a></li>
+                    <li class="menuitem"><a href="image_portofolio.html">Colecție imagini</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+           <section class="section bg-dark" id="prezentare">
+                <div class="container split-layout">
+                    <div class="content-left">
+                        <h1>Francisc-Eduard Andăr</h1>
+                        <h2>IT & Fotografie</h2>
+                        <p>
+                            Sunt Andăr Francisc-Eduard, am 20 de ani și am creat acest site pentru a mă prezenta într-un mod clar 
+                            și profesionist. Aici veți găsi informații despre parcursul meu educațional și competențele mele.
+                        </p>
+                        <a href="about.html" class="btn btn-accent">Despre mine</a>
+                    </div>
+                    <div class="content-right">
+                        <img src="images/poza_mea.jpg" alt="Francisc Eduard" class="profile-photo">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section bg-light" id="education">
+                <div class="container split-layout reverse-mobile">
+                    <div class="content-left">
+                        <img src="images/upb.jpg" alt="Universitatea Politehnica Bucuresti" class="feature-img imageReveal">
+                    </div>
+                    <div class="content-right">
+                        <h2 class="section-title-dark">Educație</h2>
+                        
+                        <div class="edu-block">
+                            <h3>Facultatea de Automatică și Calculatoare, UNSTPB</h3>
+                            <p class="meta">2024 - Prezent | Ingineria Sistemelor</p>
+                        </div>
+
+                        <div class="edu-block">
+                            <h3>Liceul Greco-Catolic "Timotei Cipariu"</h3>
+                            <p class="meta">2020 - 2024 | Matematică-Informatică</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section bg-dark" id="competences">
+                <div class="container ">
+                    <h2 class="section-title-light center-text">Competențe</h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-box">
+                            <h3>C</h3>
+                        </div>
+                        <div class="skill-box">
+                            <h3>C++</h3>
+                        </div>
+                        <div class="skill-box">
+                            <h3>HTML</h3>
+                        </div>
+                        <div class="skill-box">
+                            <h3>CSS</h3>
+                        </div>
+                        <div class="skill-box">
+                            <h3>LaTeX</h3>
+                        </div>
+                        <div class="skill-box">
+                            <h3>SQL</h3>
+                        </div>
+                        <div class="skill-box">
+                            <h3>Lightroom</h3>
+                        </div>
+                        <div class="skill-box">
+                            <h3>Arduino</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section bg-dark" id="photography">
+                <div class="container split-layout reverse-mobile">
+                    <div class="content-left">
+                        <img src="images/camera_foto.jpg" alt="Echipament foto" class="feature-img">
+                    </div>
+                    <div class="content-right">
+                        <h2 class="section-title-light">Hobby principal: Fotografia</h2>
+                        <p>
+                            Fotografia este modul meu de a surprinde lumea. De la peisaje urbane la portrete,
+                            încerc să spun o poveste prin fiecare cadru.
+                        </p>
+                        <a href="image_portofolio.html" class="btn btn-outline">Vezi Portofoliu</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section bg-light" id="other_hobbies">
+                <div class="container split-layout">
+                    <div class="content-left">
+                        <h2 class="section-title-dark">Alte Pasiuni</h2>
+                        <ul class="hobby-list">
+                            <li> Drumeții montane</li>
+                            <li> Camping</li>
+                            <li> Schi</li>
+                            <li> Chitară</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-right">
+                        <div class="slider_container">
+                            <input type="radio" name="slider" id="radio1" class="hidden" checked>
+                            <label for="radio1" class="box b1"></label>
+
+                            <input type="radio" name="slider" id="radio2" class="hidden">
+                            <label for="radio2" class="box b2"></label>
+
+                            <input type="radio" name="slider" id="radio3" class="hidden">
+                            <label for="radio3" class="box b3"></label>
+
+                            <input type="radio" name="slider" id="radio4" class="hidden">
+                            <label for="radio4" class="box b4"></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+        
+        <footer class="bg-dark">
+            <div class="container footer-content">
+                <div class="footer-left">
+
+                    <a href="https://www.facebook.com/" class="social-icon" target="_blank"><img src="images/facebook.png"
+                        alt="facebook logo"></a>
+                    <a href="https://www.instagram.com/" class="social-icon" target="_blank"><img src="images/instagram.png"
+                        alt="instagram logo"></a>
+                    <a href="mailto:francisc.andar@stud.acs.upb.ro" class="social-icon"><img src="images/mail.png"
+                        alt="email logo"></a>
+                </div>
+                
+                <div class="footer-right">
+                    <img src="images/logo.png" alt="Logo Footer" class="footer-logo">
+                    <p>&copy; 2025 Francisc-Eduard Andar</p>
+                </div>
+            </div>
+        </footer>
+            
+        <!-- Back to top icon-->
+        <a href="#" class="back-to-top">
+            <span class="material-symbols-outlined">arrow_warm_up</span>
+        </a>
+
+        <!-- scurt script pentru loader -->
+        <script>
+            window.addEventListener("load", function () {
+                const preloader = document.getElementById("preloader");
+                preloader.style.opacity = "0";
+                setTimeout(() => {
+                    preloader.style.display = "none";
+                }, 1000);
+            });
+        </script>
+
+    </body>
+
+</html>

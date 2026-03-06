@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>FA | Despre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div id="preloader">
+        <span class="loader"></span>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="navbar_left">
+                <a href="home.html" class="logo">
+                    <img src="images/logo.png" alt="AF Logo">
+                </a>
+            </div>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle visuallyHidden">
+            
+            <label for="nav-toggle" class="nav-toggle-label">
+                <div class="hamburger hamburger1">
+                    <span class="bar bar1"></span>
+                    <span class="bar bar2"></span>
+                    <span class="bar bar3"></span>
+                    <span class="bar bar4"></span>
+                </div>
+            </label>
+
+            <ul class="menu">
+                <li class="menuitem"><a href="home.html">Acasă</a></li>
+                <li class="menuitem"><a href="contact.html">Contact</a></li>
+                <li class="menuitem"><a href="about.html">Despre</a></li>
+                <li class="menuitem"><a href="image_portofolio.html">Colecție imagini</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section bg-dark">
+            <div class="container split-layout">
+                <div class="content-left">
+                    <h1>Despre mine</h1>
+                    <p>
+                        Mă numesc <strong>Andăr Francisc-Eduard</strong> și sunt student în anul II la 
+                        <strong>Facultatea de Automatică și Calculatoare</strong> din cadrul UNSTPB. 
+                        Sunt pasionat de tehnologie, programare și tot ceea ce ține de lumea digitală.
+                    </p>
+                    <p>
+                        De asemenea, îmi dedic o mare parte din timpul liber fotografiei. Cel mai mult îmi place 
+                        să fotografiez peisaje montane, dar și urbane, din locurile în care călătoresc în vacanțe.
+                    </p>
+                    <p>
+                        Încă din anul 2017, sunt membru activ în cadrul Asociației Cercetașii Munților. Această experiență
+                        m-a format ca persoană, dezvoltându-mi abilitațile de lucru în echipă, disciplina și capapacitatea de
+                        a lua decizii rapide în situații neprevăzute. Am învățat să prețuiesc natura, însă, mai presus de toate,
+                        am învățat să ai ajut pe toți cei aflați în difcultate. 
+                    </p>
+                </div>
+                
+                <div class="content-right">
+                    <div class="about-grid">
+                        <img src="images/taking_pictures.jpeg" alt="facand poze" class="grid-img">
+                        <img src="images/cercetasi.jpeg" alt="la cercetasi" class="grid-img">
+                        <img src="images/riding.jpeg" alt="la calarit" class="grid-img">
+                        <img src="images/pe_munte.jpeg" alt="la munte" class="grid-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light">
+            <div class="container split-layout reverse-mobile">
+                <div class="content-left">
+                    <img src="images/coding.jpg" alt="Pasiuni" class="feature-img">
+                </div>
+
+                <div class="content-right">
+                    <h2 class="section-title-dark">Interesele mele</h2>
+                    <p>
+                        Îmi place să îmbin creativitatea cu logica și să lucrez la proiecte din domenii precum:
+                    </p>
+
+                    <ul class="hobby-list">
+                        <li> Programare (C/C++)</li>
+                        <li> Tehnologii web</li>
+                        <li> Baze de date</li>
+                        <li> Fotografie</li>
+                    </ul>
+
+                    <p>
+                        Sunt mereu dornic să învăț lucruri noi și să-mi dezvolt abilitățile, atât în mediul academic,
+                        cât și prin proiecte personale.
+                    </p>
+                    
+                    <a href="contact.html" class="btn btn-accent">Contactați-mă</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="https://www.facebook.com/" class="social-icon" target="_blank">
+                    <img src="images/facebook.png" alt="facebook logo">
+                </a>
+                <a href="https://www.instagram.com/" class="social-icon" target="_blank">
+                    <img src="images/instagram.png" alt="instagram logo">
+                </a>
+                <a href="mailto:francisc.andar@stud.acs.upb.ro" class="social-icon">
+                    <img src="images/mail.png" alt="email logo">
+                </a>
+            </div>
+            
+            <div class="footer-right">
+                <img src="images/logo.png" alt="Logo Footer" class="footer-logo">
+                <p>&copy; 2025 Francisc-Eduard Andar</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- scurt script pentru loader -->
+    <script>
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById("preloader");
+            preloader.style.opacity = "0";
+            setTimeout(() => {
+                preloader.style.display = "none";
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>
